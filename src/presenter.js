@@ -5,6 +5,19 @@ const form = document.querySelector("#auto-form");
 const result_div = document.querySelector("#resultado-div");
 const grid_container = document.querySelector("#grid-container");
 
+function create_grid(max_x, max_y) {
+  grid_container.innerHTML = '';
+  grid_container.style.gridTemplateColumns = `repeat(${max_x + 1}, 30px)`;
+  for (let y = max_y; y >= 0; y--) {
+    for (let x = 0; x <= max_x; x++) {
+      const cell = document.createElement('div');
+      cell.className = 'grid-cell';
+      cell.id = `cell-${x}-${y}`;
+      grid_container.appendChild(cell);
+    }
+  }
+}
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const commands = commands_input.value;
