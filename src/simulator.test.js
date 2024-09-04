@@ -42,4 +42,11 @@ describe('Simulador de automoviles', () => {
     auto.move_forward();
     expect(auto.x).toBe(2);
   });
+  test('La función execute_commands(input) debería devolver la posición inicial y final', () => {
+    const result = auto.execute_commands('IAIAIDAAADAA');
+    expect(result).toEqual({
+      initial_position: '1,2N',
+      final_position: '0,0W'
+    });
+  });
 });

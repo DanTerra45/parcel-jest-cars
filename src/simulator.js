@@ -8,6 +8,19 @@ export default class AutoSimulator {
   }
   execute_commands(commands) {
     const initial_position = `${this.x},${this.y}${this.orientation}`;
+    for (let command of commands) {
+      switch (command) {
+        case 'I':
+          this.turn_left();
+          break;
+        case 'D':
+          this.turn_right();
+          break;
+        case 'A':
+          this.move_forward();
+          break;
+      }
+    }
     const final_position = `${this.x},${this.y}${this.orientation}`;
     return { initial_position, final_position };
   }
