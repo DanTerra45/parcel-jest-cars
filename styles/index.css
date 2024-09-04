@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    font-family: 'Roboto', sans-serif;
+    /* 30px rem, considering that 1rem = 16px, https://nekocalc.com/px-to-rem-converter */
+    --grid-cell-size: 1.875rem;
+    /* 1px rem */
+    --grid-cell-border: 0.0625rem;
+    --background-color: hsla(0, 0%, 100%, 0.5);
+    --cell-background-color: hsl(0, 0%, 100%);
+    --border-color: hsl(0, 0%, 0%);
+}
+
+#grid-container {
+    display: inline-grid;
+    background-color: var(--background-color);
+}
+
+.grid-cell {
+    width: var(--grid-cell-size);
+    height: var(--grid-cell-size);
+    background-color: var(--cell-background-color);
+    border: var(--grid-cell-border) solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
