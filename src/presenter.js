@@ -26,11 +26,25 @@ function update_grid(x, y, orientation) {
   }
 }
 
+function get_orientation_symbol(orientation) {
+  switch (orientation) {
+    case 'N': return '↑';
+    case 'S': return '↓';
+    case 'E': return '→';
+    case 'W': return '←';
+    default: return '';
+  }
+}
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const commands = commands_input.value;
   const [dimensions, initial_position, _] = commands.split('/');
   const [max_x, max_y] = dimensions.split(',').map(Number);
+  create_grid(max_x, max_y);
   const result = process_commands(commands);
+  result_div.innerHTML = `<p>Posición inicial: ${result.initial_position}</p>
+                          <p>Posición final: ${result.final_position}</p>`;
   const [final_x, final_y, final_orientation] = result.final_position.match(/(\d+),(\d+)([NSEW])/).slice(1);
+  update_grid(Number(final_x), Number(final_y), final_orientation);
 });
