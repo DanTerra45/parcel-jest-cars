@@ -49,4 +49,27 @@ describe('Simulador de automoviles', () => {
       final_position: '0,0W'
     });
   });
+  test('debería no sobrepasar/sobresalirse de los limites de la cuadrícula (grid)', () => {
+    const auto = new AutoSimulator(2, 2, 0, 0, 'S');
+    auto.move_forward();
+    expect(auto.y).toBe(0);
+    auto.orientation = 'W';
+    auto.move_forward();
+    expect(auto.x).toBe(0);
+    auto.orientation = 'N';
+    auto.move_forward();
+    auto.move_forward();
+    auto.move_forward();
+    expect(auto.y).toBe(2);
+    auto.orientation = 'E';
+    auto.move_forward();
+    auto.move_forward();
+    auto.move_forward();
+    expect(auto.x).toBe(2);
+  });
+  test('debería tratar con aquellos comandos que no sean válidos', () => {
+    const auto = new AutoSimulator(5, 5, 1, 1, 'N');
+    const result = auto.execute_commands('IAXDYA');
+    expect(result.final_position).toBe('0,2N');
+  });
 });
