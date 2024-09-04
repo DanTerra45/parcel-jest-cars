@@ -15,4 +15,14 @@ describe('Simulador de automoviles', () => {
     auto.turn_left();
     expect(auto.orientation).toBe('N');
   });
+  test('La función turn_right() debería cambiar la orientación correctamente', () => {
+    auto.turn_right();
+    expect(auto.orientation).toBe('E');
+    auto.turn_right();
+    expect(auto.orientation).toBe('S');
+    auto.turn_right();
+    expect(auto.orientation).toBe('W');
+    auto.turn_right();
+    expect(auto.orientation).toBe('N');
+  });
 });

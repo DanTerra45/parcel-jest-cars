@@ -13,7 +13,6 @@ describe('Manejador de las entradas', () => {
       commands: 'IAIAIAIAA'
     });
   });
-
   it('debería manejar diferentes tamaños y posiciones de la cuadrícula (grid)', () => {
     const input = "10,8/3,4E/AADADAGA";
     const result = parse_input(input);
