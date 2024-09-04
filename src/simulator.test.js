@@ -25,4 +25,21 @@ describe('Simulador de automoviles', () => {
     auto.turn_right();
     expect(auto.orientation).toBe('N');
   });
+  test('La función move_forward() debería actualizar la posición correctamente', () => {
+    auto.move_forward();
+    expect(auto.y).toBe(3);
+    auto.orientation = 'E';
+    auto.move_forward();
+    expect(auto.x).toBe(2);
+    auto.move_forward();
+    expect(auto.y).toBe(3);
+    auto.orientation = 'S';
+    auto.move_forward();
+    expect(auto.x).toBe(3);
+    auto.move_forward();
+    expect(auto.y).toBe(1);
+    auto.orientation = 'W';
+    auto.move_forward();
+    expect(auto.x).toBe(2);
+  });
 });

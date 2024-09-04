@@ -27,4 +27,20 @@ export default class AutoSimulator {
       case 'W': this.orientation = 'N'; break;
     }
   }
+  move_forward() {
+    switch (this.orientation) {
+      case 'N':
+        if (this.y < this.max_y) this.y++;
+        break;
+      case 'S':
+        if (this.y > 0) this.y--;
+        break;
+      case 'E':
+        if (this.x < this.max_x) this.x++;
+        break;
+      case 'W':
+        if (this.x > 0) this.x--;
+        break;
+    }
+  }
 }
