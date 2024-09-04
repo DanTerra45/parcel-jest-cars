@@ -9,7 +9,6 @@ describe('Procesar Comandos', () => {
       final_position: "1,3N"
     });
   });
-
   it('debería manejar los casos extremos', () => {
     const input = "3,3/0,0N/AAAAAAA";
     const result = process_commands(input);

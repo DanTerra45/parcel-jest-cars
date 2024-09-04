@@ -1,7 +1,14 @@
 <html>
   <link rel="stylesheet" href="./styles/index.css">
   <body>
-    <!-- TODO -->
+    <h1>Simulador de automovil</h1>
+    <form id="auto-form">
+      <label for="commands">Comandos:</label>
+      <input type="text" id="commands" placeholder="Ej: 5,5/1,2N/IAIAIAIAA"/>
+      <input type="submit" value="Ejecutar" id="ejecutar-button"/>
+    </form>
+    <div id="resultado-div"></div>
+    <div id="grid-container"></div>
     <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>
