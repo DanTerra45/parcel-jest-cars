@@ -18,6 +18,14 @@ function create_grid(max_x, max_y) {
   }
 }
 
+function update_grid(x, y, orientation) {
+  document.querySelectorAll('.grid-cell').forEach(cell => cell.textContent = '');
+  const cell = document.getElementById(`cell-${x}-${y}`);
+  if (cell) {
+    cell.textContent = get_orientation_symbol(orientation);
+  }
+}
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const commands = commands_input.value;
